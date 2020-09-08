@@ -9,7 +9,12 @@
  * protected are accessible from other subclasses, even if not in package
  * private types are only accessible from the class
  */
-
+/** primitive java types
+ * char: single-character, char _ = '_'
+ * int
+ * double
+ * float
+ */
 /**
  * every class must have a main
  */
@@ -24,6 +29,7 @@ public class Basics {
         //String[] is bracket for args, args stores command line arguments of type string array
 
         System.out.println(args);
+        char myChar = 'a';
+        //the Math class is in the java.lang package which is imported for free
     }
-
 }
