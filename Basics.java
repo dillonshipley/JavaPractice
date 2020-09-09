@@ -1,4 +1,4 @@
-/**
+/*
  * javadoc comment!
  */
 /**
@@ -31,6 +31,7 @@
  */
 /** static objects
  * static things can be executed without creating an object of class Basics
+ * we can run static methods on things without ever referring to the object
  * static means no "this" reference, cannot refer to class. no matter how many objects, only 1 static object
  * String[] is bracket for args, args stores command line arguments of type string array
  */
@@ -38,8 +39,27 @@
  * loops
  * for, while, do-while
  */
+/**
+ * methods
+ * static methods for class level methods (no access to an invoking object, no this reference)
+ * non static methdos for instance level methods (access to a this reference)
+ */
+/**
+ * null
+ * null refers to an invalid reference
+ */
+/**
+ * random numbers
+ */
+/**
+ * user input
+ * use the Scanner class to scan from the keyboard
+ * Scanner is in the java.util class
+ */
 
 import java.text.DecimalFormat;
+import java.util.Random;
+import java.util.Scanner;
 
 /**
  * every class must have a main
@@ -105,5 +125,31 @@ public class Basics {
             i = i + 2;
         }while(i <= 20);
         System.out.println();
+
+        System.out.println(hasSameLastCharacter("hello", "mario"));
+
+        Random randObject = new Random();
+        int randInt = randObject.nextInt(6);
+        System.out.println(randInt);
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter your favorite number: ");
+        int favNum = keyboard.nextInt();
+        System.out.println("favNum: " + favNum);
+        keyboard.nextLine(); //flush out the newLine character in the buffer from nextInt()
+
+        System.out.println("Enter your favorite place: ");
+        String favPlace = keyboard.nextLine();
+        System.out.println("favPlace: " + favPlace);
+
+    } //end of main
+
+    public static boolean hasSameLastCharacter(String first, String second) {
+        if(first != null && second != null){
+            if(first.length() > 0 && second.length() > 0){
+                return first.charAt(first.length() - 1) == second.charAt(second.length() - 1);
+            }
+        }
+        return false;
     }
 }
